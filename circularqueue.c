@@ -34,7 +34,7 @@ void enqueue(int newitem)
 		printf("the queue is full!\n");
 	else
 	{
-		if(front == (-1) ) front = 0;
+		if(front == (-1) ) front = 0; //初始化front  
 		rear = (rear +1) % MAX; //這樣rear 指針才有circular 的效果  
 		arr[rear] = newitem;
 		printf("You inserted -> %d\n",newitem); 
@@ -51,14 +51,14 @@ void dequeue()
 	else
 	{
 		element = arr[front];
-		if(front == rear) //reset 
+		if(front == rear) //reset if front index and rear index is the same 
 			{
 				front =-1;
 				rear = -1;
 			}
 		else
 		{
-			front = (front +1) % MAX ;
+			front = (front +1) % MAX ;//update front
 		}
 		printf("You dequeue => %d",element);
 	}
